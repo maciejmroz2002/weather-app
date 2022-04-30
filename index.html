@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+    <link rel="icon" href="icon.png">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/8e9629719a.js" crossorigin="anonymous"></script>
+    <script src="./script.js" defer ></script>
+</head>
+<body>
+    <div class="content" id="content">
+        
+        <!-- main container -->
+        <div class="main-container" data-main-container>
+            <div class="nav" id="nav" data-addon>
+                <img class='info-icon' src="./img/err.gif" id="nav-icon" alt="">
+                <button class="addon" data-gif-for-today-button>Gif for today</button>
+                <button class="addon" data-history-button>Today in history</button>
+                <button class="addon" data-color-mode-button>Dark Mode</button>
+                <button class="menu-icon"  data-menu-button><i class="fa-solid fa-bars fa-xl"></i></button>
+            </div>
+            <div class="info">
+                <h1 class="info-temp" id="info-temp"></h1>
+                <h2 class="info-city" id="info-city">City not found</h2>
+                <p class="info-time"><span id="info-time"></span> • <span id="info-day">Try to find your city again</span></p>
+            </div>
+        </div>
+
+        <!-- menu -->
+        <div class="menu" id="menu">
+            <div class="menu-content">
+                <div class="menu-header">
+                    <div >
+                        <form class="search-bar" action="" data-city-form>
+                            <input type="text" placeholder="Search your city" data-city-input>
+                            <button class="search-button"><i class="fa-solid fa-magnifying-glass" id="search-button" data-city-button></i></button>
+                        </form>
+                    </div>
+                    <button id="close-menu-button">×</button>
+                </div>
+                <div class="weather-info" id="weather-info">
+                    <div class="city-title">
+                        <img class='info-icon' src="./img/err.gif" alt="">
+                        <h2>Find your city</h2>
+                        <p></p>
+                    </div>
+                    <div class="hour-weather">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <template id="menu-weather-template">
+        <div class="city-title">
+            <img class='info-icon' src="./img/weather-icons/rain-icon.gif" id='menu-icon' alt="">
+            <h2 id="city-name"></h2>
+            <p id="city-hour"></p>
+        </div>
+        <div class="hour-weather">
+            
+        </div>
+    </template>
+
+    <template id="gif-title-template">
+        <button class="gif-refresh" id="refresh-gif-button"><i class="fa-xl fa-solid fa-arrow-rotate-right"></i></button>Gif for today:
+    </template>
+
+    <template id="pop-up-template">
+        <div class="pop-up-area" id="pop-up-area" data-pop-up>
+            <div class="pop-up">
+                <button class="close-btn" id="close-pop-up-button"><p class="x-sign">×</p></button>
+                <h2 class="title" id="pop-up-title"></h2>
+                <div class="popup-content" id="pop-up-content">
+                    <img src="./img/load.svg" id="pop-up-img" alt="">
+
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <template id="city-template">
+        <div class="pop-up-area" id="pop-up-area" data-city-pop-up>
+            <div class="pop-up">
+                <h2 class="title" id="pop-up-title">Find your city</h2>
+                <div class="popup-content" id="pop-up-content">
+                        <form class="search-bar" action="" data-pop-up-city-form>
+                            <input type="text" placeholder="Search your city" data-popup-city-input>
+                            <button class="search-button"><i class="fa-solid fa-magnifying-glass" id="search-button" data-popup-city-button></i></button>
+                        </form>
+                </div>
+            </div>
+        </div>
+    </template>
+
+
+
+</body>
+</html>
